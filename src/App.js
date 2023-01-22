@@ -1,13 +1,14 @@
-import './App.css';
-import Navigation from './components/navigation';
+import Navigation from "./components/navigation";
+import BodyInfo from "./components/info";
+import FAQ from "./components/faq";
+import "./App.css";
 
 function App() {
   return (
     <>
       <Navigation />
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <BodyInfo />
+      <FAQ />
     </>
   );
 }
