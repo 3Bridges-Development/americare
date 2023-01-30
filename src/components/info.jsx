@@ -3,7 +3,7 @@ import React from "react";
 function BodyInfo() {
   return (
     <>
-      <div className="body-container flex justify-evenly items-center mt-4">
+      <div className="body-container flex justify-evenly items-center mt-5">
         <div className="mission-wrapper">
           <h2 className="text-2xl text-center font-bold">Mission</h2>
           <p>Lorem ipsum dolor sit amet.</p>
