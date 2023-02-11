@@ -4,7 +4,7 @@ function FAQ() {
   return (
     <>
       <div className="fact-container mt-4">
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly max-md:flex-col-reverse items-center">
           <div className="image-wrapper">
             <img
               src="https://picsum.photos/300/300"
