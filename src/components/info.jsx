@@ -2,10 +2,21 @@ import React, { useState, useEffect } from "react";
 
 const query = `
 query {
-  mission(id: "56SMlz81KtgvWHdmU4fnKz") {
-    description
+	homePhotosCollection {
+    items {
+      missionText,
+      homePageImagesCollection {
+        items {
+          height,
+          width,
+          description,
+          fileName
+        }
+      } 
+    }
   }
-}`
+}
+`
 
 const {REACT_APP_SPACE_ID, REACT_APP_CDA_TOKEN} = process.env
 
@@ -28,12 +39,11 @@ function BodyInfo() {
 
   return (
     <>
+    {console.log(description)}
       <div className="body-container flex justify-evenly max-md:flex-col items-center mt-5">
         <div className="mission-wrapper">
           <h2 className="text-2xl text-center font-bold">Mission</h2>
-          <p>{description.mission.description}</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p>{description.homePhotosCollection.items[0].missionText}</p>
         </div>
         <div className="img-wrapper">
           <img
