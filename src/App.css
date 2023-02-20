@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .fact-container {
     padding-bottom: 1rem;
   }
