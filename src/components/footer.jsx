@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer-container text-center bg-red-200 mt-5">
+    <div className="footer-container mt-auto bg-red-200">
       <div className="text-lg font-bold">
         Americare &copy; Copyright {new Date().getFullYear()}
       </div>
