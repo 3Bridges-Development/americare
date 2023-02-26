@@ -3,11 +3,21 @@ import React, { useState, useEffect } from "react";
 
 const query = `
 query {
-  missionCollection {
+  faqsCollection{
     items {
-      description
-      secondDescription
-      thirdDescription
+      faqTitle,
+      q1,
+      q2,
+      q3,
+      a1,
+      a2,
+      a3,
+      faqImage {
+        url,
+        title,
+        description,
+        fileName
+      }
     }
   }
 }
@@ -34,28 +44,29 @@ function FAQ() {
     
   return (
     <>
+    {console.log(faq)}
       <div className="fact-container mt-4">
         <div className="flex justify-evenly max-md:flex-col-reverse items-center">
           <div className="image-wrapper">
             <img
-              src="https://picsum.photos/300/300"
-              alt="#"
+              src={faq.faqsCollection.items[0].faqImage.url}
+              alt={faq.faqsCollection.items[0].faqImage.description}
               className="rounded"
             />
           </div>
           <div className="fact-wrapper">
-            <h2 className="text-2xl text-center font-bold">Facts/FAQ's</h2>
+            <h2 className="text-2xl text-center font-bold">{faq.faqsCollection.items[0].faqTitle}</h2>
             <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.missionCollection.items[0].description}</h3>
-              <p>{faq.missionCollection.items[1].description}</p>
+              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q1}</h3>
+              <p>{faq.faqsCollection.items[0].a1}</p>
             </div>
             <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.missionCollection.items[0].secondDescription}</h3>
-              <p>{faq.missionCollection.items[1].secondDescription}</p>
+              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q2}</h3>
+              <p>{faq.faqsCollection.items[0].a2}</p>
             </div>
             <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.missionCollection.items[0].thirdDescription}</h3>
-              <p>{faq.missionCollection.items[1].thirdDescription}</p>
+              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q3}</h3>
+              <p>{faq.faqsCollection.items[0].q3}</p>
             </div>
           </div>
         </div>
