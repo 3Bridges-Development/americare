@@ -10,7 +10,7 @@ module.exports = {
         'dark-red': '#820515',
       },
       fontFamily: {
-        'sans': ['Proxima Nova', 'Verdana'],
+        'sans': ['Proxima Nova'],
       },
     },
   },
