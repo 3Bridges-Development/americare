@@ -30,7 +30,7 @@ function Footer() {
   }, [])
 
   return (
-    <div className="footer-container mt-auto bg-red-200">
+    <div className="footer-container mt-auto bg-red-700 text-white">
       <div className="text-lg font-bold">
         Americare &copy; Copyright {new Date().getFullYear()}
       </div>
