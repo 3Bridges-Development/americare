@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 
 const query = `
 query {
-	homePhotosCollection {
+	missionInfoCollection{
     items {
-      missionText,
-      homePageImagesCollection {
-        items {
-          height,
-          width,
-          description,
-          fileName
-        }
-      } 
+      missionTitle,
+      missionDescription,
+      missionImage {
+        url,
+        description,
+        fileName,
+        title
+      }
     }
   }
 }
@@ -21,7 +20,7 @@ query {
 const {REACT_APP_SPACE_ID, REACT_APP_CDA_TOKEN} = process.env
 
 function BodyInfo() {
-  let [description, setDescription] = useState("")
+  let [mission, setMission] = useState("")
 
   useEffect(() => {
     window.fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_SPACE_ID}?`, {
@@ -32,23 +31,22 @@ function BodyInfo() {
       },
       body: JSON.stringify({ query }),
     }).then(response => response.json())
-    .then(json => setDescription(json.data))
+    .then(json => setMission(json.data))
   }, [])
 
-  if(!description) return <span>Loading...</span>
+  if(!mission) return 
 
   return (
     <>
-    {console.log(description)}
       <div className="body-container flex justify-evenly max-md:flex-col items-center mt-5">
         <div className="mission-wrapper">
-          <h2 className="text-2xl text-center font-bold">Mission</h2>
-          <p>{description.homePhotosCollection.items[0].missionText}</p>
+          <h2 className="text-2xl text-center font-bold">{mission.missionInfoCollection.items[0].missionTitle}</h2>
+          <p>{mission.missionInfoCollection.items[0].missionDescription}</p>
         </div>
         <div className="img-wrapper">
           <img
-            src="https://picsum.photos/300/300"
-            alt="#"
+            src={mission.missionInfoCollection.items[0].missionImage.url}
+            alt={mission.missionInfoCollection.items[0].missionImage.description}
             className="rounded"
           />
         </div>
