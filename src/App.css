@@ -2,7 +2,22 @@
   box-sizing: border-box;
 }
 
+.mission-wrapper {
+  max-width: 500px;
+  width: 100%;
+}
+
+.fact {
+  max-width: 500px;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
+  .mission-wrapper,
+  .fact {
+    max-width: 300px;
+  }
+
   .fact-container {
     padding-bottom: 1rem;
   }
