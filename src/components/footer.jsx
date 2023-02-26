@@ -11,7 +11,7 @@ function Footer() {
         <br />
         <span>Phone: (123)456.7890</span>
       </div>
-      <a href="/" className="contact-form">
+      <a href="/" className="contact-form text-base">
         Contact Us
       </a>
     </div>
