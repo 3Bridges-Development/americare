@@ -39,7 +39,7 @@ function Footer() {
         <br />
         <span>Phone: {footer ? footer.footerCollection.items[0].phoneNumber : ""}</span>
       </div>
-      <a href="/" className="contact-form">
+      <a href="/" className="contact-form text-base">
         Contact Us
       </a>
     </div>
