@@ -3,7 +3,7 @@ import React from "react";
 function FAQ() {
   return (
     <>
-      <div className="fact-container mt-4">
+      <div className="fact-container my-4">
         <div className="flex justify-evenly max-md:flex-col-reverse items-center">
           <div className="image-wrapper">
             <img
