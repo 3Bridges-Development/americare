@@ -58,7 +58,7 @@ function BodyInfo() {
             alt={
               mission.missionInfoCollection.items[0].missionImage.description
             }
-            className="rounded"
+            className="rounded max-w-sm w-full"
           />
         </div>
       </div>

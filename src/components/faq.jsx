@@ -52,26 +52,26 @@ function FAQ() {
             <img
               src={faq.faqsCollection.items[0].faqImage.url}
               alt={faq.faqsCollection.items[0].faqImage.description}
-              className="rounded"
+              className="rounded max-w-sm w-full"
             />
           </div>
           <div className="fact-wrapper">
             <h2 className="text-2xl text-center font-bold">
               {faq.faqsCollection.items[0].faqTitle}
             </h2>
-            <div className="fact m-3">
+            <div className="fact mt-3 mx-4 mb-4">
               <h3 className="text-lg font-bold">
                 {faq.faqsCollection.items[0].q1}
               </h3>
               <p className="text-base">{faq.faqsCollection.items[0].a1}</p>
             </div>
-            <div className="fact m-3">
+            <div className="fact m-4">
               <h3 className="text-lg font-bold">
                 {faq.faqsCollection.items[0].q2}
               </h3>
               <p className="text-base">{faq.faqsCollection.items[0].a2}</p>
             </div>
-            <div className="fact m-3">
+            <div className="fact m-4">
               <h3 className="text-lg font-bold">
                 {faq.faqsCollection.items[0].q3}
               </h3>
