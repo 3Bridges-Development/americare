@@ -6,12 +6,12 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen text-center">
       <Navigation />
       <BodyInfo />
       <FAQ />
       <Footer />
-    </>
+    </div>
   );
 }
 
