@@ -55,7 +55,7 @@ function FAQ() {
               className="rounded max-w-sm w-full"
             />
           </div>
-          <div className="fact-wrapper">
+          <div className="fact-wrapper mt-4">
             <h2 className="text-2xl text-center font-bold">
               {faq.faqsCollection.items[0].faqTitle}
             </h2>
