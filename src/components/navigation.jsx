@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Navigation({ fixed }) {
-//   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-red-700">
