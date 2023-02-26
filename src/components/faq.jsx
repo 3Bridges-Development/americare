@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const query = `
 query {
   faqsCollection{
@@ -21,27 +20,30 @@ query {
     }
   }
 }
-`
-const {REACT_APP_SPACE_ID, REACT_APP_CDA_TOKEN} = process.env
-
-
+`;
+const { REACT_APP_SPACE_ID, REACT_APP_CDA_TOKEN } = process.env;
 
 function FAQ() {
-    let [faq, setFaq] = useState("")
-    
-      useEffect(() => {
-        window.fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_SPACE_ID}?`, {
+  let [faq, setFaq] = useState("");
+
+  useEffect(() => {
+    window
+      .fetch(
+        `https://graphql.contentful.com/content/v1/spaces/${REACT_APP_SPACE_ID}?`,
+        {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${REACT_APP_CDA_TOKEN}`
+            Authorization: `Bearer ${REACT_APP_CDA_TOKEN}`,
           },
           body: JSON.stringify({ query }),
-        }).then(response => response.json())
-        .then(json => setFaq(json.data))
-      }, [])
-    if(!faq) return <span>Loading...</span>
-    
+        }
+      )
+      .then((response) => response.json())
+      .then((json) => setFaq(json.data));
+  }, []);
+  if (!faq) return <span>Loading...</span>;
+
   return (
     <>
       <div className="fact-container my-4">
@@ -50,22 +52,30 @@ function FAQ() {
             <img
               src={faq.faqsCollection.items[0].faqImage.url}
               alt={faq.faqsCollection.items[0].faqImage.description}
-              className="rounded"
+              className="rounded max-w-sm w-full"
             />
           </div>
           <div className="fact-wrapper">
-            <h2 className="text-2xl text-center font-bold">{faq.faqsCollection.items[0].faqTitle}</h2>
-            <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q1}</h3>
-              <p>{faq.faqsCollection.items[0].a1}</p>
+            <h2 className="text-2xl text-center font-bold">
+              {faq.faqsCollection.items[0].faqTitle}
+            </h2>
+            <div className="fact mt-3 mx-4 mb-4">
+              <h3 className="text-lg font-bold">
+                {faq.faqsCollection.items[0].q1}
+              </h3>
+              <p className="text-base">{faq.faqsCollection.items[0].a1}</p>
             </div>
-            <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q2}</h3>
-              <p>{faq.faqsCollection.items[0].a2}</p>
+            <div className="fact m-4">
+              <h3 className="text-lg font-bold">
+                {faq.faqsCollection.items[0].q2}
+              </h3>
+              <p className="text-base">{faq.faqsCollection.items[0].a2}</p>
             </div>
-            <div className="fact m-3">
-              <h3 className="text-lg font-bold">{faq.faqsCollection.items[0].q3}</h3>
-              <p>{faq.faqsCollection.items[0].q3}</p>
+            <div className="fact m-4">
+              <h3 className="text-lg font-bold">
+                {faq.faqsCollection.items[0].q3}
+              </h3>
+              <p className="text-base">{faq.faqsCollection.items[0].q3}</p>
             </div>
           </div>
         </div>
