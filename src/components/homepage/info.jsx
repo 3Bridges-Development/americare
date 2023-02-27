@@ -43,6 +43,14 @@ function BodyInfo() {
 
   return (
     <>
+      <div
+        className="bg-fixed bg-cover"
+        style={{
+          height: "25rem",
+          backgroundImage:
+            "url(https://www.brighamandwomens.org/assets/BWH/about-bwh/images/westwood-health-center-100-brigham-way-700x400.jpg)",
+        }}
+      ></div>
       <div className="body-container flex justify-evenly max-md:flex-col items-center mt-5">
         <div className="mission-wrapper mt-8">
           <h2 className="text-2xl text-center font-bold">
